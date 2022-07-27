@@ -14,7 +14,9 @@
             <img src="@/assets/main4.svg" alt="" />
           </div>
           <p>Cпециализируемся на займовом трафике.</p>
-          <router-link :to="{ name: 'InputForm' }"> Подключиться </router-link>
+          <router-link style="display: contents" :to="{ name: 'InputForm' }">
+            Подключиться
+          </router-link>
         </div>
       </div>
     </div>
@@ -48,7 +50,7 @@
         </div>
       </div>
     </div>
-    <div class="statistik">
+    <div id="statistik" class="statistik">
       <div class="container">
         <h1>Вы получаете:</h1>
         <div class="statistik_inner">
@@ -193,7 +195,9 @@
           </h2>
         </div>
         <div class="contact_text">
-          <button>Подключиться</button>
+          <router-link style="display: contents" :to="{ name: 'InputForm' }">
+            <button>Подключиться</button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -254,7 +258,7 @@
         </div>
       </div>
     </div>
-    <div class="generation">
+    <div id="generation" class="generation">
       <div class="container">
         <div class="generation_left">
           <img src="@/assets/generation_bg.svg" alt="" />
@@ -299,7 +303,7 @@
         </div>
       </div>
     </div>
-    <div class="trafik">
+    <div id="trafik" class="trafik">
       <div class="container">
         <div class="trafik_left">
           <h1>Монетизация трафика</h1>
@@ -328,7 +332,9 @@
         <h1>Для подключения к системе оставьте заявку:</h1>
         <div class="sistem_item">
           <div class="contact_text">
-            <button>Подключиться</button>
+            <router-link style="display: contents" :to="{ name: 'InputForm' }">
+              <button>Подключиться</button>
+            </router-link>
           </div>
           <img src="@/assets/tr_bg.svg" alt="" />
         </div>

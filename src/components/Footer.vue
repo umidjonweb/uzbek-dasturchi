@@ -1,20 +1,24 @@
 <template>
   <div class="wrapper">
-    <div class="contact">
+    <div id="contact" class="contact">
       <div class="container">
         <h1>Контакты</h1>
         <div class="contact_inner">
           <div class="inner">
             <img src="@/assets/tg.svg" alt="" />
             <div class="username">
-              <h6 class="h1">@TatianaMichurina</h6>
+              <a target="_blank" href="https://t.me/TatianaMichurina" class="h1"
+                >@TatianaMichurina</a
+              >
               <h3>Татьяна</h3>
             </div>
           </div>
           <div class="inner">
             <img src="@/assets/tg.svg" alt="" />
             <div class="username">
-              <h6 class="h1">@@katesmsads</h6>
+              <a target="_blank" class="h1" href="https://t.me/katesmsmads"
+                >@@katesmsads</a
+              >
               <h3>Екатерина</h3>
             </div>
           </div>
@@ -29,14 +33,16 @@
             <p>Стать нашим клиентом:</p>
             <div class="icon">
               <img src="@/assets/email.svg" alt="" />
-              <h3>sales@smsads.ru</h3>
+              <a target="_blank" href="mailto:sales@smsads.ru"
+                >sales@smsads.ru</a
+              >
             </div>
           </div>
           <div class="email_content_box1">
             <p>По общим вопросам:</p>
             <div class="icon">
               <img src="@/assets/email.svg" alt="" />
-              <h3>info@smsads.ru</h3>
+              <a target="_blank" href="mailto:info@smsads.ru">info@smsads.ru</a>
             </div>
           </div>
           <div class="email_content_box2">
@@ -46,7 +52,9 @@
             </p>
             <div class="icon">
               <img src="@/assets/email.svg" alt="" />
-              <h3>partner@smsads.ru</h3>
+              <a target="_blank" href="mailto:partner@smsads.ru"
+                >partner@smsads.ru</a
+              >
             </div>
           </div>
         </div>
@@ -55,14 +63,28 @@
     <div class="footer">
       <div class="container">
         <div class="footer_icons">
-          <img src="@/assets/logo.svg" alt="" />
-          <img src="@/assets/logo2.svg" alt="" />
-          <img src="@/assets/logo3.svg" alt="" />
+          <router-link :to="{ name: 'home' }">
+            <img src="@/assets/logo.svg" alt="" />
+          </router-link>
+          <router-link :to="{ name: 'Error' }">
+            <img src="@/assets/logo2.svg" alt="" />
+          </router-link>
+          <a
+            target="_black"
+            href="https://devtek.io/
+          "
+          >
+            <img src="@/assets/logo3.svg" alt="" />
+          </a>
         </div>
         <div class="footer_link">
           <div class="footer_left">
-            <a href="#">Политика обработки персональных данных</a>
-            <a href="#">Партнерское соглашение</a>
+            <router-link :to="{ name: 'Error' }"
+              >Политика обработки персональных данных</router-link
+            >
+            <router-link :to="{ name: 'Error' }"
+              >Партнерское соглашение</router-link
+            >
           </div>
           <div class="footer_rigth">
             <img src="@/assets/f1.svg" alt="" />
@@ -107,7 +129,7 @@ export default {
     margin-top: 140px;
     .container {
       margin: 0 auto;
-      padding-left: 9%;
+      // padding-left: 9%;
       h1 {
         font-family: "Inter";
         font-style: normal;
@@ -127,6 +149,7 @@ export default {
           align-items: flex-start;
           gap: 16px;
           .username {
+            transition: all 0.3s;
             .h1 {
               font-family: "Inter";
               font-style: normal;
@@ -144,6 +167,11 @@ export default {
               line-height: 140%;
               color: #484e65;
               margin-top: 13px;
+            }
+            &:hover {
+              a {
+                color: #8b8e97;
+              }
             }
           }
         }
@@ -177,7 +205,7 @@ export default {
   .email {
     margin-top: 130px;
     .container {
-      padding-left: 9%;
+      // padding-left: 9%;
       h2 {
         font-family: "Inter";
         font-style: normal;
@@ -207,7 +235,7 @@ export default {
             display: flex;
             align-items: center;
             gap: 10px;
-            h3 {
+            a {
               font-family: "Noto Sans";
               font-style: normal;
               font-weight: 500;
@@ -215,6 +243,14 @@ export default {
               line-height: 150%;
 
               color: #fb6b1a;
+            }
+            &:hover {
+              a {
+                background: linear-gradient(90deg, #ff9d0a 0%, #ff792d 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              }
             }
           }
         }
@@ -234,7 +270,7 @@ export default {
             display: flex;
             align-items: center;
             gap: 10px;
-            h3 {
+            a {
               font-family: "Noto Sans";
               font-style: normal;
               font-weight: 500;
@@ -242,6 +278,14 @@ export default {
               line-height: 150%;
 
               color: #fb6b1a;
+            }
+            &:hover {
+              a {
+                background: linear-gradient(90deg, #ff9d0a 0%, #ff792d 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              }
             }
           }
         }
@@ -259,7 +303,7 @@ export default {
             display: flex;
             align-items: center;
             gap: 10px;
-            h3 {
+            a {
               font-family: "Noto Sans";
               font-style: normal;
               font-weight: 500;
@@ -267,6 +311,14 @@ export default {
               line-height: 150%;
 
               color: #fb6b1a;
+            }
+            &:hover {
+              a {
+                background: linear-gradient(90deg, #ff9d0a 0%, #ff792d 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              }
             }
           }
         }
@@ -318,7 +370,7 @@ export default {
 
     background: #fbfbfb;
     .container {
-      padding-left: 9%;
+      // padding-left: 9%;
       .footer_icons {
         display: flex;
         align-items: center;

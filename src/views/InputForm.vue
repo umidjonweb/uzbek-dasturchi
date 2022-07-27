@@ -1,7 +1,7 @@
 <template>
   <div>
-    <HelloWorld />
-    <div class="input">
+    <HelloWorld @handleClose="componentFunc" />
+    <div v-if="isbool" class="input">
       <div class="container">
         <h1>Для подключения к системе заполните данные:</h1>
         <div class="form">
@@ -51,7 +51,11 @@
           <div class="form_right">
             <el-form label-position="top" label-width="100px">
               <el-form-item type="tel" label="Телефон" prop="name">
-                <el-input placeholder="ФИО" v-model="ruleForm.email"></el-input>
+                <el-input
+                  v-mask="'+7 ### ###-##-##'"
+                  placeholder="+7 999 999-99-99"
+                  v-model="ruleForm.tel"
+                ></el-input>
               </el-form-item>
               <el-form-item label="Мессенджер для связи" prop="region">
                 <el-select v-model="ruleForm.region" placeholder="Telegram">
@@ -84,7 +88,7 @@
         </el-form>
       </div>
     </div>
-    <Footer />
+    <Footer v-if="isbool" />
   </div>
 </template>
 
@@ -99,9 +103,11 @@ export default {
   },
   data() {
     return {
+      isbool: true,
       ruleForm: {
         name: "",
         email: "",
+        tel: "",
         comment: "",
         sayt: "",
         region: "",
@@ -178,6 +184,10 @@ export default {
   mounted() {},
 
   methods: {
+    componentFunc() {
+      this.isbool = !this.isbool;
+      console.log(this.isClose);
+    },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {

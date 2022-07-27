@@ -2,14 +2,16 @@
   <div class="header__content">
     <div class="header">
       <div class="logo">
-        <img src="@/assets/logo.svg" alt="" />
+        <router-link :to="{ name: 'home' }">
+          <img src="@/assets/logo.svg" alt="" />
+        </router-link>
       </div>
       <div class="menu">
         <div class="nav">
-          <a href="#">Рассылки</a>
-          <a href="#">Лидогенерация</a>
-          <a href="#">Монетизация трафика</a>
-          <a href="#">Контакты</a>
+          <a href="#statistik">Рассылки</a>
+          <a href="#generation">Лидогенерация</a>
+          <a href="#trafik">Монетизация трафика</a>
+          <a href="#contact">Контакты</a>
         </div>
         <div class="head_btn">
           <CurrentColor />
@@ -33,7 +35,7 @@
         <a href="#"> Контакты </a>
       </div>
       <div class="header_bottom_exit">
-        <CurrentColor />
+        <CurrentColor class="active" />
         <div class="btn_right">
           <a href="#">Войти</a>
           <img src="@/assets/sign.svg" alt="" />
@@ -67,7 +69,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .header__content {
   .header {
     display: flex;
@@ -157,6 +159,7 @@ export default {
       align-items: center;
       justify-content: space-between;
       gap: 44px;
+      transition: 0.3s !important;
       a {
         font-family: "Noto Sans";
         font-style: normal;
@@ -164,6 +167,7 @@ export default {
         font-size: 16px;
         line-height: 140%;
         color: #0f2756;
+        transition: 0.3s !important;
       }
     }
   }
@@ -238,6 +242,14 @@ export default {
         justify-content: center;
         gap: 20px;
         align-items: center;
+        .active {
+          width: 345px;
+          height: 72px;
+          .btn_left {
+            width: 100% !important;
+            height: 100% !important;
+          }
+        }
         .btn_right {
           display: flex;
           justify-content: center;
@@ -275,7 +287,15 @@ export default {
     .logo img {
       width: 103px !important;
     }
-  
+    .header_bottom {
+      .header_bottom_title {
+        a {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 140%;
+        }
+      }
+    }
     .header .head_btn {
       gap: 25px;
       padding-left: 25px;
