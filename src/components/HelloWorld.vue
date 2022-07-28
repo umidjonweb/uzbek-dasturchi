@@ -15,10 +15,13 @@
         </div>
         <div class="head_btn">
           <CurrentColor />
-          <div class="btn_right">
-            <a href="#">Войти</a>
-            <img src="@/assets/sign.svg" alt="" />
-          </div>
+          <router-link :to="{ name: 'Error' }">
+            <div class="btn_right">
+              <a href="#">Войти</a>
+              <img src="@/assets/sign.svg" alt="" />
+            </div>
+          </router-link>
+
           <div @click="isBurger" class="burger_menu">
             <img v-if="isClose" src="@/assets/burger.svg" alt="" />
             <img v-else src="@/assets/close.svg" alt="" />

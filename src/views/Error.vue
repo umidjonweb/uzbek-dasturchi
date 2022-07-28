@@ -74,5 +74,12 @@ export default {
   .email {
     display: none;
   }
+  @media (max-width: 991px) {
+    .erors {
+      img {
+        width: 90%;
+      }
+    }
+  }
 }
 </style>

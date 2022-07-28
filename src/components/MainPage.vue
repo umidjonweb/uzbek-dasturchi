@@ -14,9 +14,7 @@
             <img src="@/assets/main4.svg" alt="" />
           </div>
           <p>Cпециализируемся на займовом трафике.</p>
-          <router-link style="display: contents" :to="{ name: 'InputForm' }">
-            Подключиться
-          </router-link>
+          <router-link :to="{ name: 'InputForm' }"> Подключиться </router-link>
         </div>
       </div>
     </div>
